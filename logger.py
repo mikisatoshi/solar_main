@@ -4,7 +4,7 @@ import datetime
 import numpy as np
 from math import sin,cos
 
-import bme280_
+
 import takephoto_
 import access_ as acc
 
@@ -21,6 +21,7 @@ class PiLoger():
     return values
 
   def get_data(self):
+    import bme280_
     dt_now = datetime.datetime.now()
     value = dt_now.hour * 60 + dt_now.minute
     values = bme280_.getData()
