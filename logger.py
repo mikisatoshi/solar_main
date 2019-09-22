@@ -47,6 +47,7 @@ if __name__ == '__main__':
   except:
     with open("./certification/para.json") as f:
       para = json.load(f)
+  print('succseslly read parameter file')
   print(para)
 
   if para['logger'] == 'on':
