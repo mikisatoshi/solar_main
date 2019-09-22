@@ -31,12 +31,19 @@ class PiLoger():
 
 
 
-def main():
+def main(para):
 
   PA = acc.PiAccess(para["bookname"],para["sheetname"],para["keyname"])
 
   PL = PiLoger(ch = 8)
   PA.append(PL.get_data())
+
+
+def main_logger_test(para):
+
+  PA = acc.PiAccess(para["bookname"],para["sheetname"],para["keyname"])
+  PL = PiLoger(ch = 8)
+  PA.append(PL.get_dummy_data())
 
 
 if __name__ == '__main__':
@@ -49,6 +56,13 @@ if __name__ == '__main__':
       para = json.load(f)
   print('succseslly read parameter file')
   print(para)
+
+
+  if para['logger_test'] == 'on':
+    try:
+      main_logger_test(para)
+    except:
+      pass
 
   if para['logger'] == 'on':
     try:
