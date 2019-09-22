@@ -5,7 +5,7 @@ import numpy as np
 from math import sin,cos
 
 
-import takephoto_
+
 import access_ as acc
 
 class PiLoger():
@@ -57,6 +57,7 @@ if __name__ == '__main__':
 
   if para['takephoto'] == 'on':
     try:
+      import takephoto_
       # takephoto.main()
       pass
     except:
