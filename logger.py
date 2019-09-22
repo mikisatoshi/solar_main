@@ -40,6 +40,7 @@ def main(para):
 
 
 def main_logger_test(para):
+  print(para)
 
   PA = acc.PiAccess(para["bookname"],para["sheetname"],para["keyname"])
   PL = PiLoger(ch = 8)
