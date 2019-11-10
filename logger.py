@@ -60,12 +60,12 @@ if __name__ == '__main__':
 
 
   if para['logger_test'] == 'on':
-  # try:
+  try:
     print(' try  logger_test   ')
     main_logger_test(para)
     print('   succes   ')
-  # except:
-    print('   failed   ')
+  except:
+    print('  para[logger_test] == on  :  failed   ')
     # pass
 
   if para['logger'] == 'on':
