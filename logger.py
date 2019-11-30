@@ -28,12 +28,12 @@ class PiLoger():
     value = self.adc.read_adc(0, gain=self.GAIN)
     value = self.adc.read_adc_difference(0, gain=self.GAIN)
 
-    print('V value = ' + str(-value*(3.28/4660)) + ' V')
+    print('V value = ' + str(-value*(3.28/4645)) + ' V')
 
     dt_now = datetime.datetime.now()
     # value = dt_now.hour * 60 + dt_now.minute
     values = bme280_.getData()
-    return  [str(datetime.datetime.now()), -value*(3.28/4660), values[0], values[1]/1000, values[2], "test"]
+    return  [str(datetime.datetime.now()), -value*(3.28/4645), values[0], values[1]/1000, values[2], "test"]
 
 
   def init_get_adc_data(self):
