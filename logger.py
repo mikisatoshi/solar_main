@@ -70,8 +70,11 @@ if __name__ == '__main__':
 
   if para['logger'] == 'on':
     try:
+      print(' try  logger   ')
       main()
+      print('   succes   ')
     except:
+      print('  para[logger] == on  :  failed   ')
       pass
 
   if para['takephoto'] == 'on':
