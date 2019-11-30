@@ -7,6 +7,8 @@ from math import sin,cos
 
 
 import access_ as acc
+import ADS1x15
+
 
 class PiLoger():
   def __init__(self, ch = 8):
@@ -21,13 +23,20 @@ class PiLoger():
     return values
 
   def get_data(self):
-    import bme280_
+    import bme280_   
+    self.init_get_adc_data()
+    value = self.adc.read_adc(0, gain=self.GAIN)
+
     dt_now = datetime.datetime.now()
-    value = dt_now.hour * 60 + dt_now.minute
+    # value = dt_now.hour * 60 + dt_now.minute
     values = bme280_.getData()
     return  [str(datetime.datetime.now()), value, values[0], values[1]/1000, values[2], "test"]
 
 
+  def init_get_adc_data(self):
+    self.adc = ADS1x15.ADS1115()
+    self.counter_adc = 0
+    self.GAIN = 1
 
 
 
@@ -45,6 +54,10 @@ def main_logger_test(para):
   PA = acc.PiAccess(para["bookname"],para["sheetname"],para["keyname"])
   PL = PiLoger(ch = 4)
   PA.append(PL.get_dummy_data())
+
+
+
+
 
 
 if __name__ == '__main__':
