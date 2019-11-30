@@ -71,7 +71,7 @@ if __name__ == '__main__':
   if para['logger'] == 'on':
     try:
       print(' try  logger   ')
-      main()
+      main(para)
       print('   succes   ')
     except:
       print('  para[logger] == on  :  failed   ')
