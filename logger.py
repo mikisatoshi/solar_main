@@ -26,6 +26,7 @@ class PiLoger():
     import bme280_   
     self.init_get_adc_data()
     value = self.adc.read_adc(0, gain=self.GAIN)
+    value = read_adc_difference(0, gain=self.GAIN)
 
     dt_now = datetime.datetime.now()
     # value = dt_now.hour * 60 + dt_now.minute
@@ -35,7 +36,6 @@ class PiLoger():
 
   def init_get_adc_data(self):
     self.adc = ADS1x15.ADS1115()
-    self.counter_adc = 0
     self.GAIN = 1
 
 
