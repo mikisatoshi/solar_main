@@ -27,7 +27,7 @@ class PiLoger():
     self.init_get_adc_data()
     value = self.adc.read_adc(0, gain=self.GAIN)
     value = self.adc.read_adc_difference(0, gain=self.GAIN)
-    print('V value = ' + value)
+    print('V value = ' + str(value))
 
     dt_now = datetime.datetime.now()
     # value = dt_now.hour * 60 + dt_now.minute
