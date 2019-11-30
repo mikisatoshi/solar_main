@@ -33,7 +33,7 @@ class PiLoger():
     dt_now = datetime.datetime.now()
     # value = dt_now.hour * 60 + dt_now.minute
     values = bme280_.getData()
-    return  [str(datetime.datetime.now()), -value*(3.28/4736), values[0], values[1]/1000, values[2], "test"]
+    return  [str(datetime.datetime.now()), -value*(3.28/4600), values[0], values[1]/1000, values[2], "test"]
 
 
   def init_get_adc_data(self):
