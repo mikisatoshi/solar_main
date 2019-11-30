@@ -25,7 +25,7 @@ class PiLoger():
     dt_now = datetime.datetime.now()
     value = dt_now.hour * 60 + dt_now.minute
     values = bme280_.getData()
-    return  ["-",str(datetime.datetime.now()), value, values[0], values[1]/1000, values[2], 0 ,0, 0, 0, "test"]
+    return  [str(datetime.datetime.now()), value, values[0], values[1]/1000, values[2], "test"]
 
 
 
@@ -35,7 +35,7 @@ def main(para):
 
   PA = acc.PiAccess(para["bookname"],para["sheetname"],para["keyname"])
 
-  PL = PiLoger(ch = 8)
+  PL = PiLoger(ch = 6)
   PA.append(PL.get_data())
 
 
