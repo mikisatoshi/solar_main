@@ -19,16 +19,16 @@ class PiAccess():
 
   def get_latest_values(self, number = 1):# example "A17:D10000"
     print(self.worksheet.acell('A35').value)
-    last_row_number = self.worksheet.acell('A35').value
-    print(int(last_row_number) + 1)
+    last_row_number = int(self.worksheet.acell('A35').value)
+    print(last_row_number + 1 - number)
 
-    print('A' + str(int(last_row_number +1 -number)))
+    print('A' + str(last_row_number +1 -number))
 
-    print(self.worksheet.acell('A' + str(int(last_row_number +1 -number))).value)
-    print('A' + str(int(last_row_number +1 -number)) + ':F' + str(int(last_row_number +1 -number)) )
+    print(self.worksheet.acell('A' + str(last_row_number +1 -number)).value)
+    print('A' + str(last_row_number +1 -number) + ':F' + str(last_row_number +1 -number) )
     # print(self.worksheet.row_count)
     # print(self.worksheet.findall('test'))
-    return self.worksheet.range('A' + str(int(last_row_number +1 -number)) + ':F' + str(int(last_row_number +1 -number)))
+    return self.worksheet.range('A' + str(last_row_number +1 -number) + ':F' + str(last_row_number +1 -number))
 
 
   def append(self, value_list):
