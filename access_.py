@@ -17,10 +17,11 @@ class PiAccess():
     self.worksheet.append_row(["-", 123, 456, "testgs"])
     print('succesful')
 
-  def get_cell_values(self, rangetxt):# example "A17:D10000"
+  def get_latest_values(self, number = 1):# example "A17:D10000"
     print(self.worksheet.acell('A35').value)
     last_row_number = self.worksheet.acell('A35').value
-    print(self.worksheet.acell('A' + str(last_row_number)).value)    
+    print(self.worksheet.acell('A' + str(last_row_number +1 -number)).value)
+    print(self.worksheet.range('A' + str(last_row_number +1 -number) + 'F' + str(last_row_number +1 -number) ))
     # print(self.worksheet.row_count)
     # print(self.worksheet.findall('test'))
     return self.worksheet.range(rangetxt)
