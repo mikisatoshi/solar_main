@@ -60,7 +60,7 @@ def main_logger_test(para):
 def make_hour_report(para):
   PA = acc.PiAccess(para["bookname"],para["sheetname"],para["keyname"])
 
-  values = PA.get_latest_values(2)
+  values = PA.get_latest_values()
   print(values)
       
 

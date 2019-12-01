@@ -17,10 +17,22 @@ class PiAccess():
     self.worksheet.append_row(["-", 123, 456, "testgs"])
     print('succesful')
 
-  def get_latest_values(self, number = 1):# example "A17:D10000"
+  def get_latest_values(self, * , number = 0):# example "A17:D10000"
     print(self.worksheet.acell('A35').value)
     last_row_number = int(self.worksheet.acell('A35').value)
-    print(last_row_number + 1 - number)
+    row_number = int(last_row_number - number)
+    print(self.worksheet.acell('A'+str(row_number)).value)
+
+    A = self.worksheet.acell('A'+str(row_number)).value
+    B = self.worksheet.acell('B'+str(row_number)).value
+    C = self.worksheet.acell('C'+str(row_number)).value
+    D = self.worksheet.acell('D'+str(row_number)).value
+    E = self.worksheet.acell('E'+str(row_number)).value
+    F = self.worksheet.acell('F'+str(row_number)).value
+
+
+
+
 
     # print('A' + str(last_row_number +1 -number))
 
@@ -28,7 +40,7 @@ class PiAccess():
     # print('A' + str(last_row_number +1 -number) + ':F' + str(last_row_number +1 -number) )
     # print(self.worksheet.row_count)
     # print(self.worksheet.findall('test'))
-    return self.worksheet.range('A' + str(last_row_number +1 -number) + ':F' + str(last_row_number))
+    return {A,B,C,D,E,F}
 
 
   def append(self, value_list):
