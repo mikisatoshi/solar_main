@@ -31,7 +31,7 @@ class PiAccess():
     E = self.worksheet.acell('E'+str(row_number)).value
     F = self.worksheet.acell('F'+str(row_number)).value
 
-    JST = dt.strptime(A, '%Y-%m-%d %H:%M:%S')
+    JST = dt.strptime(A, '%Y-%m-%d %H:%M:%S.%f')
     print(JST)
 
 
