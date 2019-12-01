@@ -35,8 +35,11 @@ class PiAccess():
     print( JST + dt.timedelta(hours=9) )
 
 
-
     return (JST,B,C,D,E,F)
+
+
+  def update_acell(self, label,value):
+    self.worksheet.update_acell(label,value)
 
 
   def append(self, value_list):

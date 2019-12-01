@@ -70,6 +70,8 @@ def make_hour_report(para):
   if (nowtime - values[0]) < datetime.timedelta(minutes=15):
     updatetime = nowtime.hour
     print(updatetime)
+    PA.update_acell('D'+str(int(updatetime+2)),values[1])
+    PA.update_acell('E'+str(int(updatetime+2)),values[2])
 
 
 
