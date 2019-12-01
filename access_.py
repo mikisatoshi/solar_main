@@ -17,6 +17,10 @@ class PiAccess():
     self.worksheet.append_row(["-", 123, 456, "testgs"])
     print('succesful')
 
+  def get_cell_values(self, rangetxt):# example "A17:D10000"
+    return self.worksheet.range(rangetxt)
+
+
   def append(self, value_list):
     self.worksheet.append_row(value_list) # example ["-", 123, 456, "testgs"]
 

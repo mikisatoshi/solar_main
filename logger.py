@@ -42,10 +42,10 @@ class PiLoger():
 
 
 
+
 def main(para):
 
   PA = acc.PiAccess(para["bookname"],para["sheetname"],para["keyname"])
-
   PL = PiLoger(ch = 6)
   PA.append(PL.get_data())
 
@@ -58,6 +58,11 @@ def main_logger_test(para):
   PA.append(PL.get_dummy_data())
 
 
+def make_hour_report(para):
+  PA = acc.PiAccess(para["bookname"],para["sheetname"],para["keyname"])
+  values = PA.get_cell_values('A1:B10')
+  print(values)
+      
 
 
 
@@ -81,7 +86,7 @@ if __name__ == '__main__':
       print('   succes   ')
     except:
       print('  para[logger_test] == on  :  failed   ')
-      # pass
+
 
   if para['logger'] == 'on':
     try:
@@ -91,6 +96,19 @@ if __name__ == '__main__':
     except:
       print('  para[logger] == on  :  failed   ')
       pass
+
+
+  if para['make_hour_report'] == 'on':
+    try:
+      print(' try  make_hour_report   ')
+      make_hour_report(para)
+      print('   succes   ')
+    except:
+      print('  para[make_hour_report] == on  :  failed   ')
+      pass
+
+
+
 
   if para['takephoto'] == 'on':
     try:
