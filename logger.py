@@ -58,11 +58,18 @@ def main_logger_test(para):
 
 
 def make_hour_report(para):
+  """
+  ここの処理はGCP上で動かす前提なので、時間がGSTとなるため、日本時間に直す処理が必要になる
+  """
   PA = acc.PiAccess(para["bookname"],para["sheetname"],para["keyname"])
 
   values = PA.get_latest_values(number = 0)
 
   nowtime = datetime.datetime.now() + datetime.timedelta(hours=9)
+
+  if (nowtime - values[0]) < datetime.timedelta(minutes=15):
+    updatetime = nowtime.hour
+    print(updatetime)
 
 
 
