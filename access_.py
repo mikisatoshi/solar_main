@@ -32,7 +32,7 @@ class PiAccess():
     F = self.worksheet.acell('F'+str(row_number)).value
 
     JST = dt.strptime(A, '%Y-%m-%d %H:%M:%S.%f')
-    print(JST + datetime.timedelta(hours=9))
+    print(JST + dt.timedelta(hours=9))
 
 
 
