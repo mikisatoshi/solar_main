@@ -60,8 +60,8 @@ def main_logger_test(para):
 
 def make_hour_report(para):
   PA = acc.PiAccess(para["bookname"],para["sheetname"],para["keyname"])
-  
-  values = PA.get_cell_values('A41:A50')
+
+  values = PA.get_cell_values(2)
   print(values)
       
 
