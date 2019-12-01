@@ -61,6 +61,12 @@ def make_hour_report(para):
   PA = acc.PiAccess(para["bookname"],para["sheetname"],para["keyname"])
 
   values = PA.get_latest_values(number = 0)
+
+  nowtime = datetime.datetime.now()
+  print(nowtime)
+
+
+
   print(values)
       
 
