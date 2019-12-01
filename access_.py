@@ -40,7 +40,7 @@ class PiAccess():
     # print('A' + str(last_row_number +1 -number) + ':F' + str(last_row_number +1 -number) )
     # print(self.worksheet.row_count)
     # print(self.worksheet.findall('test'))
-    return {A,B,C,D,E,F}
+    return (A,B,C,D,E,F)
 
 
   def append(self, value_list):
