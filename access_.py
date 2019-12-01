@@ -19,7 +19,7 @@ class PiAccess():
 
   def get_cell_values(self, rangetxt):# example "A17:D10000"
     print(self.worksheet.row_count)
-    print(self.worksheet.findall('2019-12-01 13'))
+    print(self.worksheet.findall('test'))
     return self.worksheet.range(rangetxt)
 
 
