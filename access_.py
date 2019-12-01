@@ -25,10 +25,10 @@ class PiAccess():
     print(self.worksheet.acell('A'+str(row_number)).value)
 
     A = self.worksheet.acell('A'+str(row_number)).value
-    B = double(self.worksheet.acell('B'+str(row_number)).value)
-    C = double(self.worksheet.acell('C'+str(row_number)).value)
-    D = double(self.worksheet.acell('D'+str(row_number)).value)
-    E = double(self.worksheet.acell('E'+str(row_number)).value)
+    B = float(self.worksheet.acell('B'+str(row_number)).value)
+    C = float(self.worksheet.acell('C'+str(row_number)).value)
+    D = float(self.worksheet.acell('D'+str(row_number)).value)
+    E = float(self.worksheet.acell('E'+str(row_number)).value)
     F = self.worksheet.acell('F'+str(row_number)).value
 
     JST = dt.datetime.strptime(A, '%Y-%m-%d %H:%M:%S.%f')
