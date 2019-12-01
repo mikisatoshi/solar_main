@@ -18,7 +18,7 @@ class PiAccess():
     print('succesful')
 
   def get_cell_values(self, rangetxt):# example "A17:D10000"
-    print(self.worksheet.row_count())
+    print(self.worksheet.row_count)
     return self.worksheet.range(rangetxt)
 
 
