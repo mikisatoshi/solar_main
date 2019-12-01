@@ -20,6 +20,9 @@ class PiAccess():
   def get_latest_values(self, number = 1):# example "A17:D10000"
     print(self.worksheet.acell('A35').value)
     last_row_number = self.worksheet.acell('A35').value
+
+    print('A' + str(int(last_row_number +1 -number)))
+
     print(self.worksheet.acell('A' + str(int(last_row_number +1 -number))).value)
     print('A' + str(int(last_row_number +1 -number)) + ':F' + str(int(last_row_number +1 -number)) )
     # print(self.worksheet.row_count)
