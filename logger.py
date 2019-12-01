@@ -62,7 +62,7 @@ def make_hour_report(para):
 
   values = PA.get_latest_values(number = 0)
 
-  nowtime = datetime.datetime.now() + dt.timedelta(hours=9)
+  nowtime = datetime.datetime.now() + datetime.timedelta(hours=9)
 
 
 
