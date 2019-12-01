@@ -68,6 +68,7 @@ def make_hour_report(para):
 
   print(nowtime)
   print(nowtime - values[0])
+  print((nowtime - values[0]) < datetime.timedelta(minute=15))
 
 
 
