@@ -2,7 +2,7 @@
 import numpy as np
 import gspread
 from oauth2client.service_account import ServiceAccountCredentials
-from datetime import datetime as dt
+import datetime as dt
 
 class PiAccess():
   def __init__(self, bookname, sheetname, keyname):
@@ -31,7 +31,7 @@ class PiAccess():
     E = self.worksheet.acell('E'+str(row_number)).value
     F = self.worksheet.acell('F'+str(row_number)).value
 
-    JST = dt.strptime(A, '%Y-%m-%d %H:%M:%S.%f')
+    JST = dt.datetime.strptime(A, '%Y-%m-%d %H:%M:%S.%f')
     print(JST + dt.timedelta(hours=9))
 
 
