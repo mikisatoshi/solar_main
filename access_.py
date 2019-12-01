@@ -17,7 +17,7 @@ class PiAccess():
     self.worksheet.append_row(["-", 123, 456, "testgs"])
     print('succesful')
 
-  def get_latest_values(self, * , number = 0):# example "A17:D10000"
+  def get_latest_values(self, number = 0):# example "A17:D10000"
     print(self.worksheet.acell('A35').value)
     last_row_number = int(self.worksheet.acell('A35').value)
     row_number = int(last_row_number - number)
