@@ -60,7 +60,7 @@ def main_logger_test(para):
 
 def make_hour_report(para):
   PA = acc.PiAccess(para["bookname"],para["sheetname"],para["keyname"])
-  print(PA.worksheet.row_count)
+  
   values = PA.get_cell_values('A41:A50')
   print(values)
       
@@ -100,13 +100,13 @@ if __name__ == '__main__':
 
 
   if para['make_hour_report'] == 'on':
-    try:
-      print(' try  make_hour_report   ')
-      make_hour_report(para)
-      print('   succes   ')
-    except:
-      print('  para[make_hour_report] == on  :  failed   ')
-      pass
+  # try:
+    print(' try  make_hour_report   ')
+    make_hour_report(para)
+    print('   succes   ')
+  # except:
+    print('  para[make_hour_report] == on  :  failed   ')
+    # pass
 
 
 
