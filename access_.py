@@ -2,6 +2,7 @@
 import numpy as np
 import gspread
 from oauth2client.service_account import ServiceAccountCredentials
+from datetime import datetime as dt
 
 class PiAccess():
   def __init__(self, bookname, sheetname, keyname):
@@ -30,16 +31,11 @@ class PiAccess():
     E = self.worksheet.acell('E'+str(row_number)).value
     F = self.worksheet.acell('F'+str(row_number)).value
 
+    JST = dt.strptime(A, '%Y-%m-%d %H:%M:%S')
+    print(JST)
 
 
 
-
-    # print('A' + str(last_row_number +1 -number))
-
-    # print(self.worksheet.acell('A' + str(last_row_number +1 -number)).value)
-    # print('A' + str(last_row_number +1 -number) + ':F' + str(last_row_number +1 -number) )
-    # print(self.worksheet.row_count)
-    # print(self.worksheet.findall('test'))
     return (A,B,C,D,E,F)
 
 
