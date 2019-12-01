@@ -64,24 +64,18 @@ def make_hour_report(para):
   PA = acc.PiAccess(para["bookname"],para["sheetname"],para["keyname"])
 
   values = PA.get_latest_values(number = 0)
-
+  print(values)
   nowtime = datetime.datetime.now() + datetime.timedelta(hours=9)
 
   if (nowtime - values[0]) < datetime.timedelta(minutes=15):
     updatetime = nowtime.hour
-    print(updatetime)
     PA.update_acell('D'+str(int(updatetime+2)),values[1])
     PA.update_acell('E'+str(int(updatetime+2)),values[2])
 
+  if nowtime.hour == 0:
+    updatetime = nowtime.day
+    PA.update_acell('B'+str(int(updatetime+2)),values[1])
 
-
-  print(nowtime)
-  print(nowtime - values[0])
-  print((nowtime - values[0]) < datetime.timedelta(minutes=15))
-
-
-
-  print(values)
       
 
 
