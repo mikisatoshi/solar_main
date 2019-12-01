@@ -28,7 +28,7 @@ class PiAccess():
     print('A' + str(last_row_number +1 -number) + ':F' + str(last_row_number +1 -number) )
     # print(self.worksheet.row_count)
     # print(self.worksheet.findall('test'))
-    return self.worksheet.range('A' + str(last_row_number +1 -number) + ':F' + str(last_row_number +1 -number))
+    return self.worksheet.range('A' + str(last_row_number +1 -number) + ':F' + str(last_row_number)).value
 
 
   def append(self, value_list):
