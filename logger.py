@@ -74,7 +74,7 @@ def make_hour_report(para):
 
   if nowtime.hour == 0:
     updatetime = nowtime.day
-    PA.update_acell('B'+str(int(updatetime+2)),values[1])
+    PA.update_acell('B'+str(int(updatetime+1)),values[1])
 
       
 
@@ -113,13 +113,12 @@ if __name__ == '__main__':
 
 
   if para['make_hour_report'] == 'on':
-  # try:
-    print(' try  make_hour_report   ')
-    make_hour_report(para)
-    print('   succes   ')
-  # except:
-    print('  para[make_hour_report] == on  :  failed   ')
-    # pass
+    try:
+      print(' try  make_hour_report   ')
+      make_hour_report(para)
+      print('   succes   ')
+    except:
+      print('  para[make_hour_report] == on  :  failed   ')
 
 
 
