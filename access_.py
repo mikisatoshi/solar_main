@@ -3,6 +3,8 @@ import numpy as np
 import gspread
 from oauth2client.service_account import ServiceAccountCredentials
 import datetime as dt
+from pydrive.auth import GoogleAuth
+from pydrive.drive import GoogleDrive
 
 class PiAccess():
   def __init__(self, bookname, sheetname, keyname):
@@ -59,6 +61,22 @@ class PiAccess():
     print(sheet[:,0])
     print('------------------------------------------')
 
+
+  def backup_to_googledrive(self, rangetxt, filename, folder_id):
+
+    values = np.array(self.worksheet.range(rangetxt)).astype(np.unicode)
+    np.savetxt(filename, values, delimiter = ",", fmt = "%s")
+
+
+    gauth = GoogleAuth()
+    gauth.CommandLineAuth()
+    drive = GoogleDrive(gauth)
+
+    f = drive.CreateFile({'title': 'test.jpg',
+                          'mimeType': 'image/jpeg',
+                          'parents': [{'kind': 'drive#fileLink', 'id':folder_id}]})
+    f.SetContentFile(filename)
+    f.Upload()
 
 if __name__ == '__main__':
   PA = PiAccess('loger_test', 'sheet1', './../certification/miyamori.json')

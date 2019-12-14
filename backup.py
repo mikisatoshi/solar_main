@@ -1,17 +1,35 @@
 # -*- coding: utf-8 -*-
 import json
 import numpy as np
-import access as acc
+import access_ as acc
 import pandas as pd
 import datetime
 
-def main():
-  with open("./../certification/unique_name.json") as f:
-    para = json.load(f)
+def main(para):
+
   print(para)
-  PA = acc.PiAccess(para["bookname"],para["sheetname"],para["keyname"])
-  PA.backup('./../storage/now/'+para["sheetname"]+'_'+str(datetime.date.today())+'.csv')
-  PA.range_clear("A17:K20000")
+  PA = acc.PiAccess(para["bookname"],para["sheetname"],para["keyname"]) 
+  PA.backup_to_googledrive('A40:F10000', './../storage/'+para["sheetname"]+'_'+str(datetime.date.today())+'.csv', para['google_drive_id'])
+  # PA.range_clear("A40:K20000")
+
+
 
 if __name__ == '__main__':
-  main()
+
+  try:
+    with open("./../certification/para.json") as f:
+      para = json.load(f)
+  except:
+    with open("./certification/para.json") as f:
+      para = json.load(f)
+  print('succseslly read parameter file')
+  print(para)
+
+
+  if para['backup'] == 'on':
+
+    print(' try  backup   ')
+    main(para)
+    print('   succes   ')
+
+    print('  para[backup] == on  :  failed   ')

@@ -71,10 +71,15 @@ def make_hour_report(para):
     updatetime = nowtime.hour
     PA.update_acell('D'+str(int(updatetime+2)),values[1])
     PA.update_acell('E'+str(int(updatetime+2)),values[2])
+  else:
+    PA.update_acell('D'+str(int(updatetime+2)),0) 
+    PA.update_acell('E'+str(int(updatetime+2)),0)   
 
   if nowtime.hour == 0:
     updatetime = nowtime.day
     PA.update_acell('B'+str(int(updatetime+1)),values[1])
+  else:
+    PA.update_acell('B'+str(int(updatetime+1)),0)
 
       
 
