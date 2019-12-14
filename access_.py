@@ -64,7 +64,7 @@ class PiAccess():
 
   def backup_to_googledrive(self, rangetxt, filename, name, folder_id):
 
-    values = array(self.worksheet.get_all_values()).astype(np.unicode)
+    values = np.array(self.worksheet.get_all_values()).astype(np.unicode)
     np.savetxt(filename, values[39:,:], delimiter = ",", fmt = "%s")
 
 
