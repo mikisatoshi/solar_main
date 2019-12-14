@@ -62,7 +62,7 @@ class PiAccess():
     print('------------------------------------------')
 
 
-  def backup_to_googledrive(self, rangetxt, filename, folder_id):
+  def backup_to_googledrive(self, rangetxt, filename, name, folder_id):
 
     values = np.array(self.worksheet.range(rangetxt)).astype(np.unicode)
     np.savetxt(filename, values, delimiter = ",", fmt = "%s")
@@ -72,8 +72,8 @@ class PiAccess():
     gauth.CommandLineAuth()
     drive = GoogleDrive(gauth)
 
-    f = drive.CreateFile({'title': 'test.jpg',
-                          'mimeType': 'image/jpeg',
+    f = drive.CreateFile({'title': name,
+                          'mimeType': 'text/csv',
                           'parents': [{'kind': 'drive#fileLink', 'id':folder_id}]})
     f.SetContentFile(filename)
     f.Upload()
