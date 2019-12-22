@@ -80,8 +80,8 @@ def make_hour_report(para):
     PA.update_acell('E'+str(int(updatetime+2)),0)   
 
   if nowtime.hour == 0:
-    updatetime = (nowtime - datetime.timedelta(days = 2)).day
-    PA.update_acell('B'+str(int(updatetime+1)),values[1])
+    updatetime = (nowtime - datetime.timedelta(days = 1)).day
+    PA.update_acell('B'+str(int(updatetime)),values[1])
 
 
       
