@@ -68,6 +68,8 @@ def make_hour_report(para):
   nowtime = datetime.datetime.now() + datetime.timedelta(hours=9)
 
   removetime = (nowtime + datetime.timedelta(hours=2)).hour
+  print(removetime)
+  print(removetime+2)
   PA.update_acell('D'+str(int(removetime+2)),0)
   PA.update_acell('E'+str(int(removetime+2)),0)
 
