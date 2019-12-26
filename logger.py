@@ -66,6 +66,7 @@ def make_hour_report(para):
   values = PA.get_latest_values(number = 0)
   print(values)
   nowtime = datetime.datetime.now() + datetime.timedelta(hours=9)
+  print(nowtime)
 
   removetime = (nowtime + datetime.timedelta(hours=2)).hour
   print(removetime)
