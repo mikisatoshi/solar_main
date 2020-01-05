@@ -74,6 +74,7 @@ def make_hour_report(para):
   PA.update_acell('E'+str(int(removetime+2)),0)
   removetime = (nowtime + datetime.timedelta(hours=2)).hour
   PA.update_acell('D'+str(int(removetime+2)),0)
+  PA.update_acell('E'+str(int(removetime+2)),0)
 
   if (nowtime - values[0]) < datetime.timedelta(minutes=15):
     updatetime = nowtime.hour
@@ -84,7 +85,7 @@ def make_hour_report(para):
   #   PA.update_acell('E'+str(int(updatetime+2)),0)   
 
   # if nowtime.hour == 0:
-  updatetime = (nowtime - datetime.timedelta(days = 1)).day
+  updatetime = nowtime.day
   print(updatetime)
   PA.update_acell('B'+str(int(updatetime + 1)),values[1])
 
