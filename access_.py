@@ -56,7 +56,7 @@ class PiAccess():
     list_from = self.worksheet.range(rangetxt_from) # example "A17:D10000"
     list_to = self.worksheet.range(rangetxt_to) # example "A17:D10000"
     for fm, to in zip(list_from, list_to):
-      to.value = fm.value
+      to.value = float(fm.value)
     self.worksheet.update_cells(list_to)
 
 
