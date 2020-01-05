@@ -52,7 +52,7 @@ class PiAccess():
     cell_list = self.worksheet.range(rangetxt) # example "A17:D10000"
     return cell_list
 
-  def move_range(self, rangetxt_from, rangetxt_to):
+  def move_range(self, rangetxt_from, rangetxt_to):#数値の移動を行う、文字の場合は文字用に関数を作りなおす必要あり
     list_from = self.worksheet.range(rangetxt_from) # example "A17:D10000"
     list_to = self.worksheet.range(rangetxt_to) # example "A17:D10000"
     for fm, to in zip(list_from, list_to):
