@@ -31,9 +31,9 @@ if __name__ == '__main__':
 
 
   if para['backup'] == 'on':
-
-    print(' try  backup   ')
-    main(para)
-    print('   succes   ')
-
-    print('  para[backup] == on  :  failed   ')
+    try:
+      print(' try  backup   ')
+      main(para)
+      print('   succes   ')
+    except:
+      print('  para[backup] == on  :  failed   ')
