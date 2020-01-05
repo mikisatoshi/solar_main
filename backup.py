@@ -1,8 +1,10 @@
 # -*- coding: utf-8 -*-
 
 import json
+import sys
 import numpy as np
-from ..solar_main import access_
+sys.path.append('/home/kurosatou3104/solar_init/solar_main') 
+# from ..solar_main import access_
 import access_ as acc
 import pandas as pd
 import datetime
