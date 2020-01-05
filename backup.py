@@ -14,7 +14,7 @@ def main(para):
   PA.backup_to_googledrive('40:F10000', './../storage/'+para["sheetname"]+'_'+str(datetime.date.today())+'.csv', para["sheetname"]+'_'+str(datetime.date.today())+'.csv', para['google_drive_id'])
   PA.move_range("B2:B32", "G2:G32")
   PA.range_fill("B2:B32", 0.0)
-  PA.range_clear("A40:K20000")
+  PA.range_clear("A41:K20000")
 
 
 
