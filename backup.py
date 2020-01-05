@@ -2,7 +2,7 @@
 
 import json
 import numpy as np
-from .solar_main import access_
+from ..solar_main import access_
 import access_ as acc
 import pandas as pd
 import datetime
