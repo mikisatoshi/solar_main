@@ -47,6 +47,19 @@ class PiAccess():
   def append(self, value_list):
     self.worksheet.append_row(value_list) # example ["-", 123, 456, "testgs"]
 
+
+  def get_range(self, rangetxt):
+    cell_list = self.worksheet.range(rangetxt) # example "A17:D10000"
+    return cell_list
+
+  def move_range(self, rangetxt_from, rangetxt_to):
+    list_from = self.worksheet.range(rangetxt_from) # example "A17:D10000"
+    list_to = self.worksheet.range(rangetxt_to) # example "A17:D10000"
+    for fm, to in zip(list_from, list_to):
+      to.value = fm.value
+    self.worksheet.update_cells(list_to)
+
+
   def range_clear(self, rangetxt):
 
     cell_list = self.worksheet.range(rangetxt) # example "A17:D10000"
