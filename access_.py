@@ -59,6 +59,12 @@ class PiAccess():
       to.value = float(fm.value)
     self.worksheet.update_cells(list_to)
 
+  def range_fill(self, rangetxt, value):
+    cell_list = self.worksheet.range(rangetxt) # example "A17:D10000"
+    for cell in cell_list:
+        cell.value = value
+    self.worksheet.update_cells(cell_list)
+
 
   def range_clear(self, rangetxt):
 
