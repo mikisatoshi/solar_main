@@ -21,10 +21,10 @@ class PiAccess():
     print('succesful')
 
   def get_latest_values(self, number = 0):# example "A17:D10000"
-    print(self.worksheet.acell('A35').value)
+    # print(self.worksheet.acell('A35').value)
     last_row_number = int(self.worksheet.acell('A35').value)
     row_number = int(last_row_number - number)
-    print(self.worksheet.acell('A'+str(row_number)).value)
+    # print(self.worksheet.acell('A'+str(row_number)).value)
 
     A = self.worksheet.acell('A'+str(row_number)).value
     B = float(self.worksheet.acell('B'+str(row_number)).value)
@@ -34,7 +34,7 @@ class PiAccess():
     F = self.worksheet.acell('F'+str(row_number)).value
 
     JST = dt.datetime.strptime(A, '%Y-%m-%d %H:%M:%S.%f')
-    print( JST + dt.timedelta(hours=9) )
+    # print( JST + dt.timedelta(hours=9) )
 
 
     return (JST,B,C,D,E,F)

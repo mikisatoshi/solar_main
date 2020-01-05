@@ -64,8 +64,7 @@ def make_hour_report(para):
   PA = acc.PiAccess(para["bookname"],para["sheetname"],para["keyname"])
 
   values = PA.get_latest_values(number = 0)
-  print(values)
-  nowtime = datetime.datetime.now() + datetime.timedelta(hours=9)
+  # print(values)
   nowtime = values[0]
   print(nowtime)
 
@@ -87,13 +86,12 @@ def make_hour_report(para):
   # if nowtime.hour == 0:
 
 
-  removetime = (nowtime + datetime.timedelta(days=1)).day
-  PA.update_acell('B'+str(int(removetime + 1)),0)
-  removetime = (nowtime + datetime.timedelta(days=2)).day
-  PA.update_acell('B'+str(int(removetime + 1)),0)
+  # removetime = (nowtime + datetime.timedelta(days=1)).day
+  # PA.update_acell('B'+str(int(removetime + 1)),0)
+  # removetime = (nowtime + datetime.timedelta(days=2)).day
+  # PA.update_acell('B'+str(int(removetime + 1)),0)
 
   updatetime = nowtime.day
-  print(updatetime)
   PA.update_acell('B'+str(int(updatetime + 1)),values[1])
 
 
