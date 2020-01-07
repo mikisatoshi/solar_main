@@ -131,12 +131,12 @@ if __name__ == '__main__':
 
 
   if para['make_hour_report'] == 'on':
-    # try:
-    print(' try  make_hour_report   ')
-    make_hour_report(para)
-    print('   succes   ')
-    # except:
-    print('  para[make_hour_report] == on  :  failed   ')
+    try:
+      print(' try  make_hour_report   ')
+      make_hour_report(para)
+      print('   succes   ')
+    except:
+      print('  para[make_hour_report] == on  :  failed   ')
 
 
 
