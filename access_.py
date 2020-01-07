@@ -24,7 +24,7 @@ class PiAccess():
     # print(self.worksheet.acell('A35').value)
     last_row_number = int(self.worksheet.acell('A35').value)
     row_number = int(last_row_number - number)
-    # print(self.worksheet.acell('A'+str(row_number)).value)
+    print(self.worksheet.acell('A'+str(row_number)).value)
 
     A = self.worksheet.acell('A'+str(row_number)).value
     B = float(self.worksheet.acell('B'+str(row_number)).value)
