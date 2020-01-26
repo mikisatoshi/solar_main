@@ -122,12 +122,12 @@ if __name__ == '__main__':
 
 
   if para['logger'] == 'on':
-    # try:
-    print(' try  logger   ')
-    main(para)
-    print('   succes   ')
-    # except:
-    print('  para[logger] == on  :  failed   ')
+    try:
+      print(' try  logger   ')
+      main(para)
+      print('   succes   ')
+    except:
+      print('  para[logger] == on  :  failed   ')
 
 
   if para['make_hour_report'] == 'on':
